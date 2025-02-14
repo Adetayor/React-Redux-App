@@ -1,37 +1,31 @@
-import { components } from 'react'
-import './App.css'
-import * as styles from './styles'
+import { components } from 'react';
+
 
 function App() {
-  const name = ' Gean'
-  // const styles = {
-  //     border: 'solid',
-  //     textAlign: 'center',
-  //     boxShadow: '2px 2px'
-  // }
+  state = {
+      counter: 0
+  }
 
+  increment = () => (
+      this.setState({counter: 5})
+  )
   return (
     <>
-      
-      <div>
-        {/* <div style={styles.styles}>
-            Gadus Styling
-        </div>
-        <button> Click Me </button>
-        Happy Val!
-       {name} */}
-       {React.createElement(
-        'button',
-        {className: 'App'},
-        'React'
-       )}
+      <div className='App'>
+        <button onClick={() => this.increment()}> Button </button>
+          <div>
+              Div 1 {this.state.counter}
+          </div>
+          <div>
+              Div 2
+          </div>
+          <div>
+              Div 3
+          </div>
       </div>
     </>
   )
 }
 
-const Appinstance = new App()
-
-console.log(Appinstance)
 
 export default App
